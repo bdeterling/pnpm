@@ -403,7 +403,7 @@ function createPeersFolderSuffix (peers: Array<{name: string, version: string}>)
   //
   // A bigger limit might be fine but the md5 hash will be 32 symbols,
   // so for consistency's sake, we go with 32.
-  if (folderName.length > 32) {
+  if (folderName.length > 0) {
     return `_${crypto.createHash('md5').update(folderName).digest('hex')}`
   }
   return `_${folderName}`
